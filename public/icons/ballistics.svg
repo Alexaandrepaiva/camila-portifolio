@@ -1,5 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-  <path fill="#4CAF50" d="M4,9h5v2H4V9z M4,13h5v2H4V13z M4,17h5v2H4V17z M4,5h5v2H4V5z"/>
-  <path fill="#4CAF50" d="M20,5.41L18.59,4L9,13.59V9H7v10h10v-2h-4.59L20,9.41V5.41z"/>
-  <path fill="#4CAF50" d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M12,20c-4.41,0-8-3.59-8-8 s3.59-8,8-8s8,3.59,8,8S16.41,20,12,20z"/>
-</svg> 
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 width="800px" height="800px" viewBox="0 0 512 512"  xml:space="preserve">
+<style type="text/css">
+<![CDATA[
+	.st0{fill:#000000;}
+]]>
+</style>
+<g>
+	<path class="st0" d="M160.609,0c-10.438,0-50.703,75.313-54.516,108.031h109.031C211.297,75.313,171.047,0,160.609,0z"/>
+	<path class="st0" d="M229.5,473.625V261.281l-14.094-23.5c0,0,0-90.375,0-117.219l-109.594,0.016
+		c-0.016,26.828-0.016,117.203-0.016,117.203l-14.094,23.5l0.016,212.344l10.953,0.016V488.5l-10.969,0.016L91.719,512H229.5v-23.5
+		h-10.953v-14.875H229.5z"/>
+	<path class="st0" d="M351.391,161.438c-10.438,0-50.703,75.313-54.5,108.031h109.016
+		C402.094,236.75,361.844,161.438,351.391,161.438z"/>
+	<path class="st0" d="M409.344,473.625h10.938l0.016-124.281l-14.094-23.5c0,0,0-17,0-43.844l-109.594,0.016
+		c-0.016,26.828-0.016,43.828-0.016,43.828l-14.094,23.5v124.281l10.969,0.016V488.5l-10.969,0.016V512h137.797v-23.5h-10.969
+		L409.344,473.625z"/>
+</g>
+</svg>
