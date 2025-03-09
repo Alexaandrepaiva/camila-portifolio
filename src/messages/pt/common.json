@@ -16,5 +16,53 @@
   "phone": "Telefone",
   "project": "Projeto",
   "sampleProject": "Este é um projeto de exemplo",
-  "footer": "Portfólio de Camila Cardi Pifano de Paula"
+  "footer": "Portfólio de Camila Cardi Pifano de Paula",
+  
+  "home": "Início",
+  "experience": "Experiência",
+  "education": "Educação",
+  "skills": "Habilidades",
+  
+  "expCompany1": "Texas Tech University",
+  "expPosition1": "Estagiária de Pesquisa",
+  "expDate1": "Maio 2023 - Ago 2023",
+  "expDesc1A": "Conduzi pesquisa em aerodinâmica computacional para otimização de aeronaves eVTOL",
+  "expDesc1B": "Utilizei o software FlightStream para análise CFD e avaliação de desempenho",
+  "expDesc1C": "Colaborei com equipe internacional de pesquisa em designs inovadores de aeronaves",
+  "expSkills1": "CFD, FlightStream, MATLAB, Aerodinâmica, Pesquisa",
+  
+  "expCompany2": "Exército Brasileiro",
+  "expPosition2": "Colaboradora de Projeto de Engenharia",
+  "expDate2": "Jan 2022 - Dez 2022",
+  "expDesc2A": "Desenvolvi um sistema eletrônico de contagem de tiros de morteiro",
+  "expDesc2B": "Projetei componentes mecânicos e integrei sistemas eletrônicos",
+  "expDesc2C": "Realizei testes de campo e implementei melhorias no design",
+  "expSkills2": "CAD, Eletrônica, Design Mecânico, Testes, Aplicações Militares",
+  
+  "expCompany3": "STEM IME",
+  "expPosition3": "Diretora",
+  "expDate3": "Mar 2021 - Presente",
+  "expDesc3A": "Organizei oficinas científicas para estudantes de escolas públicas",
+  "expDesc3B": "Coordenei iniciativas de mentoria em âmbito nacional",
+  "expDesc3C": "Gerenciei equipe de voluntários e desenvolvi materiais educacionais",
+  "expSkills3": "Liderança, Gestão de Projetos, Educação, Divulgação, Coordenação de Equipe",
+  
+  "eduInstitution1": "Instituto Militar de Engenharia (IME)",
+  "eduDegree1": "Bacharelado em Engenharia Mecânica e de Armamento",
+  "eduDate1": "2020 - Presente",
+  "eduDesc1": "Especialização em modelagem computacional e aplicações de engenharia de defesa. Participação em projetos de pesquisa relacionados à aerodinâmica e balística.",
+  
+  "eduInstitution2": "Texas Tech University",
+  "eduDegree2": "Programa de Intercâmbio Internacional",
+  "eduDate2": "2023",
+  "eduDesc2": "Selecionada para programa competitivo de intercâmbio com foco em dinâmica de fluidos computacional avançada e aplicações de engenharia aeroespacial.",
+  
+  "technicalSkills": "Habilidades Técnicas",
+  "technicalSkillsList": "Dinâmica de Fluidos Computacional, Design Mecânico, Análise Estrutural, Balística, Aerodinâmica, Termodinâmica, Ciência dos Materiais",
+  
+  "softwareSkills": "Habilidades de Software",
+  "softwareSkillsList": "MATLAB, Ansys, FlightStream, SolidWorks, AutoCAD, MS Office, Python, LabVIEW",
+  
+  "languageSkills": "Idiomas",
+  "languageSkillsList": "Português (Nativo), Inglês (Fluente), Espanhol (Intermediário), Francês (Básico)"
 } 

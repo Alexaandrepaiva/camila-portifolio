@@ -16,5 +16,53 @@
   "phone": "Phone",
   "project": "Project",
   "sampleProject": "This is a sample project",
-  "footer": "Camila Cardi Pifano de Paula's Portfolio"
+  "footer": "Camila Cardi Pifano de Paula's Portfolio",
+  
+  "home": "Home",
+  "experience": "Experience",
+  "education": "Education",
+  "skills": "Skills",
+  
+  "expCompany1": "Texas Tech University",
+  "expPosition1": "Research Intern",
+  "expDate1": "May 2023 - Aug 2023",
+  "expDesc1A": "Conducted computational aerodynamics research on eVTOL aircraft optimization",
+  "expDesc1B": "Utilized FlightStream software for CFD analysis and performance evaluation",
+  "expDesc1C": "Collaborated with international research team on innovative aircraft designs",
+  "expSkills1": "CFD, FlightStream, MATLAB, Aerodynamics, Research",
+  
+  "expCompany2": "Brazilian Army",
+  "expPosition2": "Engineering Project Collaborator",
+  "expDate2": "Jan 2022 - Dec 2022",
+  "expDesc2A": "Developed an electronic mortar shot counter system",
+  "expDesc2B": "Designed mechanical components and integrated electronic systems",
+  "expDesc2C": "Conducted field tests and implemented design improvements",
+  "expSkills2": "CAD, Electronics, Mechanical Design, Testing, Military Applications",
+  
+  "expCompany3": "STEM IME",
+  "expPosition3": "Director",
+  "expDate3": "Mar 2021 - Present",
+  "expDesc3A": "Organized scientific workshops for public school students",
+  "expDesc3B": "Coordinated nationwide mentoring initiatives",
+  "expDesc3C": "Managed team of volunteers and developed educational materials",
+  "expSkills3": "Leadership, Project Management, Education, Outreach, Team Coordination",
+  
+  "eduInstitution1": "Instituto Militar de Engenharia (IME)",
+  "eduDegree1": "Bachelor of Mechanical and Armament Engineering",
+  "eduDate1": "2020 - Present",
+  "eduDesc1": "Specializing in computational modeling and defense engineering applications. Participating in research projects related to aerodynamics and ballistics.",
+  
+  "eduInstitution2": "Texas Tech University",
+  "eduDegree2": "International Exchange Program",
+  "eduDate2": "2023",
+  "eduDesc2": "Selected for competitive exchange program focusing on advanced computational fluid dynamics and aerospace engineering applications.",
+  
+  "technicalSkills": "Technical Skills",
+  "technicalSkillsList": "Computational Fluid Dynamics, Mechanical Design, Structural Analysis, Ballistics, Aerodynamics, Thermodynamics, Materials Science",
+  
+  "softwareSkills": "Software Skills",
+  "softwareSkillsList": "MATLAB, Ansys, FlightStream, SolidWorks, AutoCAD, MS Office, Python, LabVIEW",
+  
+  "languageSkills": "Languages",
+  "languageSkillsList": "Portuguese (Native), English (Fluent), Spanish (Intermediate), French (Basic)"
 } 
