@@ -18,34 +18,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "~/components/ui/dropdown-menu";
+import { useTranslation, type Language } from "~/lib/i18n";
 
 export default function HomePage() {
-  const [language, setLanguage] = useState<"en" | "pt">("en");
-
-  const content = {
-    en: {
-      title: "Mechanical Engineer Portfolio",
-      about: "About Me",
-      projects: "Projects",
-      contact: "Contact",
-      resume: "Download Resume",
-      aboutContent: "I am a mechanical engineer with expertise in...",
-      projectsContent: "Here are some of my projects...",
-      contactContent: "Get in touch with me...",
-    },
-    pt: {
-      title: "Portfólio de Engenharia Mecânica",
-      about: "Sobre Mim",
-      projects: "Projetos",
-      contact: "Contato",
-      resume: "Baixar Currículo",
-      aboutContent: "Sou um engenheiro mecânico com experiência em...",
-      projectsContent: "Aqui estão alguns dos meus projetos...",
-      contactContent: "Entre em contato comigo...",
-    },
-  };
-
-  const currentContent = content[language];
+  const [language, setLanguage] = useState<Language>("en");
+  const { t } = useTranslation(language);
 
   return (
     <main className="min-h-screen bg-background">
@@ -57,21 +34,21 @@ export default function HomePage() {
               <NavigationMenuItem>
                 <ScrollLink to="about" smooth={true} duration={500} className="cursor-pointer">
                   <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                    {currentContent.about}
+                    {t("about")}
                   </NavigationMenuLink>
                 </ScrollLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <ScrollLink to="projects" smooth={true} duration={500} className="cursor-pointer">
                   <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                    {currentContent.projects}
+                    {t("projects")}
                   </NavigationMenuLink>
                 </ScrollLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <ScrollLink to="contact" smooth={true} duration={500} className="cursor-pointer">
                   <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                    {currentContent.contact}
+                    {t("contact")}
                   </NavigationMenuLink>
                 </ScrollLink>
               </NavigationMenuItem>
@@ -105,20 +82,18 @@ export default function HomePage() {
           className="flex flex-col md:flex-row items-center justify-between min-h-[calc(100vh-80px)] py-12"
         >
           <div className="md:w-1/2 text-left mb-10 md:mb-0">
-            <h1 className="text-4xl md:text-5xl font-bold">{currentContent.title}</h1>
+            <h1 className="text-4xl md:text-5xl font-bold">{t("title")}</h1>
             <p className="mt-4 text-xl text-muted-foreground max-w-md">
-              {language === "en" 
-                ? "Welcome to my professional portfolio showcasing my expertise in mechanical engineering, design, and innovation." 
-                : "Bem-vindo ao meu portfólio profissional destacando minha experiência em engenharia mecânica, design e inovação."}
+              {t("welcome")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
               <Button className="flex items-center gap-2" size="lg">
                 <Mail className="h-5 w-5" />
-                {currentContent.contact}
+                {t("contact")}
               </Button>
               <Button variant="outline" className="flex items-center gap-2" size="lg">
                 <Download className="h-5 w-5" />
-                {currentContent.resume}
+                {t("resume")}
               </Button>
             </div>
           </div>
@@ -141,18 +116,16 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold mb-6">{currentContent.about}</h2>
+            <h2 className="text-3xl font-bold mb-6">{t("about")}</h2>
             <Card>
               <CardHeader>
-                <CardTitle>{language === "en" ? "About Me" : "Sobre Mim"}</CardTitle>
+                <CardTitle>{t("aboutTitle")}</CardTitle>
                 <CardDescription>
-                  {language === "en" 
-                    ? "Mechanical Engineer with expertise in design and analysis" 
-                    : "Engenheiro Mecânico com experiência em design e análise"}
+                  {t("aboutDescription")}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p>{currentContent.aboutContent}</p>
+                <p>{t("aboutContent")}</p>
               </CardContent>
             </Card>
           </motion.div>
@@ -166,19 +139,17 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold mb-6">{currentContent.projects}</h2>
+            <h2 className="text-3xl font-bold mb-6">{t("projects")}</h2>
             <Carousel className="w-full">
               <CarouselContent>
                 {[1, 2, 3].map((item) => (
                   <CarouselItem key={item} className="md:basis-1/2 lg:basis-1/3">
                     <Card>
                       <CardHeader>
-                        <CardTitle>{language === "en" ? `Project ${item}` : `Projeto ${item}`}</CardTitle>
+                        <CardTitle>{`${t("project")} ${item}`}</CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p>{language === "en" 
-                          ? `This is a sample project ${item}` 
-                          : `Este é um projeto de exemplo ${item}`}</p>
+                        <p>{`${t("sampleProject")} ${item}`}</p>
                       </CardContent>
                     </Card>
                   </CarouselItem>
@@ -198,28 +169,28 @@ export default function HomePage() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold mb-6">{currentContent.contact}</h2>
+            <h2 className="text-3xl font-bold mb-6">{t("contact")}</h2>
             <Card>
               <CardHeader>
-                <CardTitle>{language === "en" ? "Get in Touch" : "Entre em Contato"}</CardTitle>
+                <CardTitle>{t("getInTouch")}</CardTitle>
               </CardHeader>
               <CardContent>
                 <Accordion type="single" collapsible>
                   <AccordionItem value="email">
                     <AccordionTrigger>
-                      {language === "en" ? "Email" : "E-mail"}
+                      {t("email")}
                     </AccordionTrigger>
                     <AccordionContent>
                       <p>example@email.com</p>
                       <Button className="mt-2 flex items-center gap-2">
                         <Mail className="h-4 w-4" />
-                        {language === "en" ? "Send Email" : "Enviar E-mail"}
+                        {t("sendEmail")}
                       </Button>
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="phone">
                     <AccordionTrigger>
-                      {language === "en" ? "Phone" : "Telefone"}
+                      {t("phone")}
                     </AccordionTrigger>
                     <AccordionContent>
                       <p>+1 234 567 890</p>
@@ -234,7 +205,7 @@ export default function HomePage() {
         {/* Footer */}
         <footer className="py-8 text-center border-t">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} {language === "en" ? "Mechanical Engineer Portfolio" : "Portfólio de Engenharia Mecânica"}
+            © {new Date().getFullYear()} {t("footer")}
           </p>
         </footer>
       </div>
