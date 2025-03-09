@@ -11,6 +11,13 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 import { Link as ScrollLink, Element } from "react-scroll";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { ChevronDown, Download, Mail, Check } from "lucide-react";
+import { 
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "~/components/ui/dropdown-menu";
 
 export default function HomePage() {
   const [language, setLanguage] = useState<"en" | "pt">("en");
@@ -43,42 +50,51 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Navigation Menu */}
-      <div className="container mx-auto py-4">
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <ScrollLink to="about" smooth={true} duration={500} className="cursor-pointer">
-                <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                  {currentContent.about}
-                </NavigationMenuLink>
-              </ScrollLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <ScrollLink to="projects" smooth={true} duration={500} className="cursor-pointer">
-                <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                  {currentContent.projects}
-                </NavigationMenuLink>
-              </ScrollLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <ScrollLink to="contact" smooth={true} duration={500} className="cursor-pointer">
-                <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                  {currentContent.contact}
-                </NavigationMenuLink>
-              </ScrollLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="flex justify-between items-center">
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <ScrollLink to="about" smooth={true} duration={500} className="cursor-pointer">
+                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                    {currentContent.about}
+                  </NavigationMenuLink>
+                </ScrollLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <ScrollLink to="projects" smooth={true} duration={500} className="cursor-pointer">
+                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                    {currentContent.projects}
+                  </NavigationMenuLink>
+                </ScrollLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <ScrollLink to="contact" smooth={true} duration={500} className="cursor-pointer">
+                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                    {currentContent.contact}
+                  </NavigationMenuLink>
+                </ScrollLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
 
-        {/* Language Toggle */}
-        <div className="flex justify-end mt-4">
-          <Button
-            variant="outline"
-            onClick={() => setLanguage(language === "en" ? "pt" : "en")}
-            className="ml-auto"
-          >
-            {language === "en" ? "PT 🇧🇷" : "EN 🇺🇸"}
-          </Button>
+          {/* Language Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" className="flex items-center gap-2">
+                {language === "en" ? "EN 🇺🇸" : "PT 🇧🇷"}
+                <ChevronDown className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => setLanguage("en")} className="flex items-center gap-2">
+                EN 🇺🇸 {language === "en" && <Check className="h-4 w-4 ml-auto" />}
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setLanguage("pt")} className="flex items-center gap-2">
+                PT 🇧🇷 {language === "pt" && <Check className="h-4 w-4 ml-auto" />}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
 
         {/* Hero Section with Framer Motion */}
@@ -86,21 +102,39 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="py-20 text-center"
+          className="flex flex-col md:flex-row items-center justify-between min-h-[calc(100vh-80px)] py-12"
         >
-          <h1 className="text-4xl font-bold">{currentContent.title}</h1>
-          <p className="mt-4 text-muted-foreground">
-            {language === "en" 
-              ? "Welcome to my professional portfolio" 
-              : "Bem-vindo ao meu portfólio profissional"}
-          </p>
-          <Button className="mt-6">
-            {currentContent.resume}
-          </Button>
+          <div className="md:w-1/2 text-left mb-10 md:mb-0">
+            <h1 className="text-4xl md:text-5xl font-bold">{currentContent.title}</h1>
+            <p className="mt-4 text-xl text-muted-foreground max-w-md">
+              {language === "en" 
+                ? "Welcome to my professional portfolio showcasing my expertise in mechanical engineering, design, and innovation." 
+                : "Bem-vindo ao meu portfólio profissional destacando minha experiência em engenharia mecânica, design e inovação."}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+              <Button className="flex items-center gap-2" size="lg">
+                <Mail className="h-5 w-5" />
+                {currentContent.contact}
+              </Button>
+              <Button variant="outline" className="flex items-center gap-2" size="lg">
+                <Download className="h-5 w-5" />
+                {currentContent.resume}
+              </Button>
+            </div>
+          </div>
+          <div className="md:w-1/2 flex justify-center">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary">
+              <img 
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                alt="Profile" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </motion.div>
 
         {/* About Section */}
-        <Element name="about" className="py-16">
+        <Element name="about" className="py-16 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -125,7 +159,7 @@ export default function HomePage() {
         </Element>
 
         {/* Projects Section with Carousel */}
-        <Element name="projects" className="py-16">
+        <Element name="projects" className="py-16 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -157,7 +191,7 @@ export default function HomePage() {
         </Element>
 
         {/* Contact Section with Accordion */}
-        <Element name="contact" className="py-16">
+        <Element name="contact" className="py-16 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -177,7 +211,8 @@ export default function HomePage() {
                     </AccordionTrigger>
                     <AccordionContent>
                       <p>example@email.com</p>
-                      <Button className="mt-2">
+                      <Button className="mt-2 flex items-center gap-2">
+                        <Mail className="h-4 w-4" />
                         {language === "en" ? "Send Email" : "Enviar E-mail"}
                       </Button>
                     </AccordionContent>
@@ -196,76 +231,12 @@ export default function HomePage() {
           </motion.div>
         </Element>
 
-        {/* Sheet Example */}
-        <div className="py-8 text-center">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="outline">
-                {language === "en" ? "Open Sheet" : "Abrir Painel"}
-              </Button>
-            </SheetTrigger>
-            <SheetContent>
-              <SheetHeader>
-                <SheetTitle>
-                  {language === "en" ? "Sheet Example" : "Exemplo de Painel"}
-                </SheetTitle>
-                <SheetDescription>
-                  {language === "en" 
-                    ? "This is an example of the Sheet component" 
-                    : "Este é um exemplo do componente Sheet"}
-                </SheetDescription>
-              </SheetHeader>
-              <div className="py-4">
-                <p>
-                  {language === "en" 
-                    ? "This could be used for additional information or forms" 
-                    : "Isso poderia ser usado para informações adicionais ou formulários"}
-                </p>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
-
-        {/* HoverCard Example */}
-        <div className="py-8 text-center">
-          <HoverCard>
-            <HoverCardTrigger asChild>
-              <Button variant="link">
-                {language === "en" ? "Hover me" : "Passe o mouse aqui"}
-              </Button>
-            </HoverCardTrigger>
-            <HoverCardContent className="w-80">
-              <div className="flex justify-between space-x-4">
-                <div className="space-y-1">
-                  <h4 className="text-sm font-semibold">
-                    {language === "en" ? "Hover Card Example" : "Exemplo de Hover Card"}
-                  </h4>
-                  <p className="text-sm">
-                    {language === "en" 
-                      ? "This is an example of the HoverCard component" 
-                      : "Este é um exemplo do componente HoverCard"}
-                  </p>
-                </div>
-              </div>
-            </HoverCardContent>
-          </HoverCard>
-        </div>
-
-        {/* ScrollArea Example */}
-        <div className="py-8">
-          <h3 className="text-lg font-medium mb-2">
-            {language === "en" ? "Scroll Area Example" : "Exemplo de Área de Rolagem"}
-          </h3>
-          <ScrollArea className="h-[200px] w-full rounded-md border p-4">
-            <div className="space-y-4">
-              {Array.from({ length: 20 }).map((_, i) => (
-                <div key={i} className="rounded-md border p-2">
-                  {language === "en" ? `Item ${i + 1}` : `Item ${i + 1}`}
-                </div>
-              ))}
-            </div>
-          </ScrollArea>
-        </div>
+        {/* Footer */}
+        <footer className="py-8 text-center border-t">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} {language === "en" ? "Mechanical Engineer Portfolio" : "Portfólio de Engenharia Mecânica"}
+          </p>
+        </footer>
       </div>
     </main>
   );
