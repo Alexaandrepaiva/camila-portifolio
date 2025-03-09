@@ -33,10 +33,12 @@ export function Hero({ tKey, t }: HeroProps) {
                   {t("contact")}
                 </Button>
               </ScrollLink>
-              <Button variant="outline" className="flex items-center gap-2" size="lg">
-                <Download className="h-5 w-5" />
-                {t("resume")}
-              </Button>
+              <a href="/documents/cv.pdf" download>
+                <Button variant="outline" className="flex items-center gap-2" size="lg">
+                  <Download className="h-5 w-5" />
+                  {t("resume")}
+                </Button>
+              </a>
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">

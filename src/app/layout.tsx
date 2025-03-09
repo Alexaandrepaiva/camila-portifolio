@@ -12,8 +12,8 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: "Mechanical Engineer Portfolio",
-  description: "Professional portfolio showcasing expertise in mechanical engineering, design, and innovation",
+  title: "Camila Cardi",
+  description: "Professional portfolio showcasing Camila Cardi's expertise in mechanical engineering",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
