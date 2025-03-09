@@ -5,13 +5,16 @@ import { Link as ScrollLink, Element } from "react-scroll";
 import { motion } from "framer-motion";
 import { Mail, Download, ChevronDown } from "lucide-react";
 import { type Language, type TranslationKey } from "~/lib/i18n";
+import { LanguageSelector } from "~/components/LanguageSelector";
 
 interface HeroProps {
   tKey: (key: string) => string;
   t: (key: TranslationKey) => string;
+  language: Language;
+  setLanguage: (language: Language) => void;
 }
 
-export function Hero({ tKey, t }: HeroProps) {
+export function Hero({ tKey, t, language, setLanguage }: HeroProps) {
   return (
     <Element name="hero">
       <motion.div
@@ -20,8 +23,13 @@ export function Hero({ tKey, t }: HeroProps) {
         transition={{ duration: 0.5 }}
         className="flex flex-col items-center justify-center h-screen relative px-4 sm:px-6 lg:px-8"
       >
+        
+        {/* Language selector positioned at the top right */}
+        <div className="max-w-6xl w-full mx-auto absolute top-4 sm:top-6 lg:top-8 z-10 flex flex-row-reverse">
+          <LanguageSelector language={language} setLanguage={setLanguage} />
+        </div>
         <div className="max-w-6xl w-full mx-auto flex flex-col md:flex-row items-center justify-between">
-        <div className="md:w-1/3 flex justify-center">
+          <div className="md:w-1/3 flex justify-center">
             <div className="relative w-128 h-80 md:w-72 md:h-96 rounded-lg overflow-hidden border-2 border-primary p-2">
               <div className="absolute inset-2 rounded-md overflow-hidden bg-black">
                 <img 
@@ -53,7 +61,6 @@ export function Hero({ tKey, t }: HeroProps) {
               </a>
             </div>
           </div>
-          
         </div>
         
         {/* Scroll down indicator */}

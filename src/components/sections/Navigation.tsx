@@ -1,16 +1,9 @@
 "use client"
 
-import { Button } from "~/components/ui/button";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "~/components/ui/navigation-menu";
 import { Link as ScrollLink } from "react-scroll";
-import { ChevronDown, Check } from "lucide-react";
-import { 
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu";
-import { useTranslation, type Language, type TranslationKey } from "~/lib/i18n";
+import { type Language } from "~/lib/i18n";
+import { LanguageSelector } from "~/components/LanguageSelector";
 
 interface NavigationProps {
   language: Language;
@@ -61,23 +54,8 @@ export function Navigation({ language, setLanguage, tKey }: NavigationProps) {
         </NavigationMenuList>
       </NavigationMenu>
 
-      {/* Language Dropdown */}
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline" className="flex items-center gap-2">
-            {language === "en" ? "EN 🇺🇸" : "PT 🇧🇷"}
-            <ChevronDown className="h-4 w-4" />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
-          <DropdownMenuItem onClick={() => setLanguage("en")} className="flex items-center gap-2">
-            EN 🇺🇸 {language === "en" && <Check className="h-4 w-4 ml-auto" />}
-          </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => setLanguage("pt")} className="flex items-center gap-2">
-            PT 🇧🇷 {language === "pt" && <Check className="h-4 w-4 ml-auto" />}
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      {/* Language Selector */}
+      <LanguageSelector language={language} setLanguage={setLanguage} />
     </div>
   );
 } 

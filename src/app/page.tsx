@@ -60,7 +60,7 @@ export default function HomePage() {
       </div>
 
       {/* Hero section takes full viewport height initially */}
-      <Hero tKey={tKey} t={t} />
+      <Hero tKey={tKey} t={t} language={language} setLanguage={setLanguage} />
       
       {/* Other sections */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
