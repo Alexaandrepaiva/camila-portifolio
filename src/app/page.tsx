@@ -2,7 +2,7 @@
 
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
-import { Badge } from "~/components/ui/badge";
+import { Badge } from "../components/ui/badge";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "~/components/ui/navigation-menu";
 import { Link as ScrollLink, Element } from "react-scroll";
 import { motion } from "framer-motion";
@@ -15,7 +15,6 @@ import {
   Briefcase, 
   GraduationCap, 
   Code, 
-  Phone, 
   Linkedin, 
   Github, 
   Calendar
@@ -126,12 +125,14 @@ export default function HomePage() {
               </div>
             </div>
             <div className="md:w-1/2 flex justify-center">
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary">
-                <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
-                  alt="Profile" 
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative w-128 h-80 md:w-72 md:h-96 rounded-lg overflow-hidden border-2 border-primary p-2">
+                <div className="absolute inset-2 rounded-md overflow-hidden bg-black">
+                  <img 
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                    alt="Profile" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
           </motion.div>
@@ -283,23 +284,32 @@ export default function HomePage() {
             
             <Card>
               <CardContent className="pt-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Button className="flex items-center gap-2 h-16" size="lg">
-                    <Mail className="h-5 w-5" />
-                    {t("email")}
-                  </Button>
-                  <Button className="flex items-center gap-2 h-16" size="lg">
-                    <Phone className="h-5 w-5" />
-                    {t("phone")}
-                  </Button>
-                  <Button className="flex items-center gap-2 h-16" size="lg">
-                    <Linkedin className="h-5 w-5" />
-                    LinkedIn
-                  </Button>
-                  <Button className="flex items-center gap-2 h-16" size="lg">
-                    <Github className="h-5 w-5" />
-                    GitHub
-                  </Button>
+                <p className="text-muted-foreground text-center mb-6 flex flex-col items-center">
+                  {t("contactDescription")}
+                </p>
+                <div className="flex flex-col justify-center items-center sm:flex-row gap-4">
+                  <a href="mailto:milapifano@gmail.com" target="_blank" rel="noopener noreferrer" >
+                    <Button className="flex items-center gap-2 w-full" size="lg">
+                      <Mail className="h-5 w-5" />
+                      {t("email")}
+                    </Button>
+                  </a>
+                  <a href="https://www.linkedin.com/in/camila-cardi/" target="_blank" rel="noopener noreferrer" >
+                    <Button className="flex items-center gap-2 w-full" size="lg">
+                      <Linkedin className="h-5 w-5" />
+                      LinkedIn
+                    </Button>
+                  </a>
+                  <a href="https://github.com/CamilaCardi" target="_blank" rel="noopener noreferrer" >
+                    <Button className="flex items-center gap-2 w-full" size="lg">
+                      <Github className="h-5 w-5" />
+                      GitHub
+                    </Button>
+                  </a>
+                </div>
+                <div className="mt-6 pt-6 border-t text-sm text-muted-foreground flex flex-col items-center text-center">
+                  <p className="mb-1">{t("basedIn")}</p>
+                  <p>{t("availability")}</p>
                 </div>
               </CardContent>
             </Card>
