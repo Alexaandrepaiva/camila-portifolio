@@ -82,11 +82,11 @@ export default function HomePage() {
           className="flex flex-col md:flex-row items-center justify-between min-h-[calc(100vh-80px)] py-12"
         >
           <div className="md:w-1/2 text-left mb-10 md:mb-0">
-            <h1 className="text-4xl md:text-5xl font-bold">{t("title")}</h1>
-            <p className="mt-4 text-xl text-muted-foreground max-w-md">
-              {t("welcome")}
+            <h1 className="text-4xl md:text-5xl font-bold">{t("heroTitle")}</h1>
+            <p className="mt-8 text-xl text-muted-foreground font-light">
+              {t("heroSummary")}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <div className="flex flex-col sm:flex-row gap-4 mt-16">
               <Button className="flex items-center gap-2" size="lg">
                 <Mail className="h-5 w-5" />
                 {t("contact")}

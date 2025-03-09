@@ -1,5 +1,6 @@
 {
-  "title": "Portfólio de Engenharia Mecânica",
+  "heroTitle": "Camila Cardi Pifano de Paula",
+  "heroSummary": "Estudante de Engenharia Mecânica e de Armamento do Instituto Militar de Engenharia (IME) orientada a resultados, com diversificada experiência técnica e de liderança. Conduzi pesquisas avançadas em aerodinâmica computacional tanto no CNPq quanto na Texas Tech University, especializando-me em otimização de eVTOL e análise de trajetória balística utilizando FlightStream, MATLAB e Ansys. Combinei expertise técnica com habilidades de liderança como Diretora do STEM IME, organizando oficinas científicas para alunas de escolas públicas e coordenando iniciativas de mentoria em âmbito nacional. Contribuí para a engenharia de defesa prática através do desenvolvimento de um contador eletrônico de tiros de morteiro em parceria com o Exército Brasileiro. Busco uma oportunidade de estágio em engenharia industrial para aplicar fortes habilidades de modelagem computacional, experiência em pesquisa e capacidades de liderança de equipe em um ambiente corporativo",
   "about": "Sobre Mim",
   "projects": "Projetos",
   "contact": "Contato",
@@ -7,7 +8,6 @@
   "aboutContent": "Sou um engenheiro mecânico com experiência em...",
   "projectsContent": "Aqui estão alguns dos meus projetos...",
   "contactContent": "Entre em contato comigo...",
-  "welcome": "Bem-vindo ao meu portfólio profissional destacando minha experiência em engenharia mecânica, design e inovação.",
   "aboutTitle": "Sobre Mim",
   "aboutDescription": "Engenheiro Mecânico com experiência em design e análise",
   "getInTouch": "Entre em Contato",
