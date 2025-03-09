@@ -21,7 +21,19 @@ export function Hero({ tKey, t }: HeroProps) {
         className="flex flex-col items-center justify-center h-screen relative px-4 sm:px-6 lg:px-8"
       >
         <div className="max-w-6xl w-full mx-auto flex flex-col md:flex-row items-center justify-between">
-          <div className="md:w-1/2 text-left mb-10 md:mb-0">
+        <div className="md:w-1/3 flex justify-center">
+            <div className="relative w-128 h-80 md:w-72 md:h-96 rounded-lg overflow-hidden border-2 border-primary p-2">
+              <div className="absolute inset-2 rounded-md overflow-hidden bg-black">
+                <img 
+                  src="/images/profile-photo.png" 
+                  alt="Profile Photo" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+          
+          <div className="md:w-2/3 text-left mb-10 md:mb-0">
             <h1 className="text-4xl md:text-5xl font-bold">{t("heroTitle")}</h1>
             <p className="mt-8 text-xl text-muted-foreground font-light">
               {t("heroSummary")}
@@ -41,17 +53,7 @@ export function Hero({ tKey, t }: HeroProps) {
               </a>
             </div>
           </div>
-          <div className="md:w-1/2 flex justify-center">
-            <div className="relative w-128 h-80 md:w-72 md:h-96 rounded-lg overflow-hidden border-2 border-primary p-2">
-              <div className="absolute inset-2 rounded-md overflow-hidden bg-black">
-                <img 
-                  src="/images/profile-photo.png" 
-                  alt="Profile Photo" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
+          
         </div>
         
         {/* Scroll down indicator */}
