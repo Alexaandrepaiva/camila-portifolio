@@ -153,29 +153,80 @@ export default function HomePage() {
             
             {/* Experience Cards */}
             <div className="space-y-6">
-              {[1, 2, 3].map((item) => (
-                <Card key={`exp-${item}`}>
+              {[
+                {
+                  key: "experienceTexas",
+                  title: "Title",
+                  position: "Position",
+                  date: "Date",
+                  desc1: "Desc1",
+                  desc2: "Desc2",
+                  desc3: "Desc3",
+                  skills: "Skills"
+                },
+                {
+                  key: "experienceCnpq",
+                  title: "Title",
+                  position: "Position",
+                  date: "Date",
+                  desc1: "Desc1",
+                  desc2: "Desc2",
+                  desc3: "Desc3",
+                  skills: "Skills"
+                },
+                {
+                  key: "experienceImeJunior",
+                  title: "Title",
+                  position: "Position",
+                  date: "Date",
+                  desc1: "Desc1",
+                  desc2: "Desc2",
+                  desc3: "Desc3",
+                  skills: "Skills"
+                },
+                {
+                  key: "experienceProject",
+                  title: "Title",
+                  position: "Position",
+                  date: "Date",
+                  desc1: "Desc1",
+                  desc2: "Desc2",
+                  desc3: "Desc3",
+                  skills: "Skills"
+                },
+                {
+                  key: "experienceStem",
+                  title: "Title",
+                  position: "Position",
+                  date: "Date",
+                  desc1: "Desc1",
+                  desc2: "Desc2",
+                  desc3: "Desc3",
+                  skills: "Skills"
+                }
+              ].map((exp) => (
+                <Card key={exp.key}>
                   <CardHeader>
                     <div className="flex justify-between items-start">
                       <div>
-                        <CardTitle>{tKey(`expCompany${item}`)}</CardTitle>
-                        <CardDescription>{tKey(`expPosition${item}`)}</CardDescription>
+                        <CardTitle>{tKey(`${exp.key}${exp.title}`)}</CardTitle>
+                        <CardDescription>{tKey(`${exp.key}${exp.position}`)}</CardDescription>
                       </div>
                       <div className="flex items-center text-muted-foreground">
                         <Calendar className="h-4 w-4 mr-1" />
-                        <span className="text-sm">{tKey(`expDate${item}`)}</span>
+                        <span className="text-sm">{tKey(`${exp.key}${exp.date}`)}</span>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <ul className="list-disc pl-5 space-y-2">
-                      <li>{tKey(`expDesc${item}A`)}</li>
-                      <li>{tKey(`expDesc${item}B`)}</li>
-                      <li>{tKey(`expDesc${item}C`)}</li>
+                      <li>{tKey(`${exp.key}${exp.desc1}`)}</li>
+                      <li>{tKey(`${exp.key}${exp.desc2}`)}</li>
+                      <li>{tKey(`${exp.key}${exp.desc3}`)}</li>
                     </ul>
                     <div className="flex flex-wrap gap-2 mt-4">
-                      {tKey(`expSkills${item}`).split(',').map((skill, index) => (
-                        <Badge key={`skill-${item}-${index}`} variant="secondary">{skill.trim()}</Badge>
+                      {tKey(`${exp.key}${exp.skills}`).split(',').map((skill, index) => (
+                        <Badge key={`${exp.key}-skill-${index}`} variant="secondary">{skill.trim()}</Badge>
                       ))}
                     </div>
                   </CardContent>
@@ -200,22 +251,37 @@ export default function HomePage() {
             
             {/* Education Cards */}
             <div className="space-y-6">
-              {[1, 2].map((item) => (
-                <Card key={`edu-${item}`}>
+              {[
+                {
+                  key: "educationIme",
+                  title: "Title",
+                  degree: "Degree",
+                  date: "Date",
+                  desc: "Desc"
+                },
+                {
+                  key: "educationTexas",
+                  title: "Title",
+                  degree: "Degree",
+                  date: "Date",
+                  desc: "Desc"
+                }
+              ].map((edu) => (
+                <Card key={edu.key}>
                   <CardHeader>
                     <div className="flex justify-between items-start">
                       <div>
-                        <CardTitle>{tKey(`eduInstitution${item}`)}</CardTitle>
-                        <CardDescription>{tKey(`eduDegree${item}`)}</CardDescription>
+                        <CardTitle>{tKey(`${edu.key}${edu.title}`)}</CardTitle>
+                        <CardDescription>{tKey(`${edu.key}${edu.degree}`)}</CardDescription>
                       </div>
                       <div className="flex items-center text-muted-foreground">
                         <Calendar className="h-4 w-4 mr-1" />
-                        <span className="text-sm">{tKey(`eduDate${item}`)}</span>
+                        <span className="text-sm">{tKey(`${edu.key}${edu.date}`)}</span>
                       </div>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p>{tKey(`eduDesc${item}`)}</p>
+                    <p>{tKey(`${edu.key}${edu.desc}`)}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -236,36 +302,80 @@ export default function HomePage() {
               <h2 className="text-3xl font-bold">{tKey("skills")}</h2>
             </div>
             
-            <Card>
-              <CardContent className="pt-6">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div>
-                    <h3 className="font-medium text-lg mb-3">{tKey("technicalSkills")}</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {tKey("technicalSkillsList").split(',').map((skill, index) => (
-                        <Badge key={`tech-${index}`} variant="outline">{skill.trim()}</Badge>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-lg mb-3">{tKey("softwareSkills")}</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {tKey("softwareSkillsList").split(',').map((skill, index) => (
-                        <Badge key={`soft-${index}`} variant="outline">{skill.trim()}</Badge>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-lg mb-3">{tKey("languageSkills")}</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {tKey("languageSkillsList").split(',').map((skill, index) => (
-                        <Badge key={`lang-${index}`} variant="outline">{skill.trim()}</Badge>
-                      ))}
-                    </div>
-                  </div>
+            <div className="space-y-8">
+              {/* Technical Skills */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4">{tKey("technicalSkills")}</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                  {[
+                    { name: "autocad", level: "beginner", icon: "/icons/autocad.svg" },
+                    { name: "python", level: "beginner", icon: "/icons/python.svg" },
+                    { name: "cfd", level: "intermediate", icon: "/icons/cfd.svg" },
+                    { name: "mechanicalDesign", level: "intermediate", icon: "/icons/mechanical-design.svg" },
+                    { name: "ansysFluent", level: "intermediate", icon: "/icons/ansys-fluent.svg" },
+                    { name: "aerodynamics", level: "advanced", icon: "/icons/aerodynamics.svg" },
+                    { name: "thermodynamics", level: "advanced", icon: "/icons/thermodynamics.svg" },
+                    { name: "ballistics", level: "advanced", icon: "/icons/ballistics.svg" },
+                    { name: "3dPrototyping", level: "advanced", icon: "/icons/3d-prototyping.svg" },
+                    { name: "flightstream", level: "advanced", icon: "/icons/flightstream.svg" },
+                    { name: "matlab", level: "advanced", icon: "/icons/matlab.svg" },
+                    { name: "labview", level: "advanced", icon: "/icons/labview.svg" },
+                    { name: "solidworks", level: "advanced", icon: "/icons/solidworks.svg" }
+                  ].map((skill) => (
+                    <Card key={skill.name} className="overflow-hidden">
+                      <CardContent className="p-4">
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-8 h-8 flex-shrink-0">
+                            <img src={skill.icon} alt={tKey(skill.name)} className="w-full h-full" />
+                          </div>
+                          <div>
+                            <p className="font-medium">{tKey(skill.name)}</p>
+                            <div className={`text-xs px-2 py-0.5 rounded-full inline-flex items-center ${
+                              skill.level === "beginner" ? "bg-yellow-100 text-yellow-800" : 
+                              skill.level === "intermediate" ? "bg-blue-100 text-blue-800" : 
+                              "bg-green-100 text-green-800"
+                            }`}>
+                              {tKey(skill.level)}
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+              
+              {/* Soft Skills */}
+              <div>
+                <h3 className="text-xl font-semibold mb-4">{tKey("softSkills")}</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    { name: "portuguese", level: "advanced", icon: "/icons/portuguese.svg" },
+                    { name: "english", level: "advanced", icon: "/icons/english.svg" }
+                  ].map((skill) => (
+                    <Card key={skill.name} className="overflow-hidden">
+                      <CardContent className="p-4">
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="w-8 h-8 flex-shrink-0">
+                            <img src={skill.icon} alt={tKey(skill.name)} className="w-full h-full" />
+                          </div>
+                          <div>
+                            <p className="font-medium">{tKey(skill.name)}</p>
+                            <div className={`text-xs px-2 py-0.5 rounded-full inline-flex items-center ${
+                              skill.level === "beginner" ? "bg-yellow-100 text-yellow-800" : 
+                              skill.level === "intermediate" ? "bg-blue-100 text-blue-800" : 
+                              "bg-green-100 text-green-800"
+                            }`}>
+                              {tKey(skill.level)}
+                            </div>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </div>
           </motion.div>
         </Element>
 
