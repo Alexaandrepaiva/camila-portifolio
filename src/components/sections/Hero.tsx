@@ -43,8 +43,8 @@ export function Hero({ tKey, t }: HeroProps) {
             <div className="relative w-128 h-80 md:w-72 md:h-96 rounded-lg overflow-hidden border-2 border-primary p-2">
               <div className="absolute inset-2 rounded-md overflow-hidden bg-black">
                 <img 
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
-                  alt="Profile" 
+                  src="/images/profile-photo.png" 
+                  alt="Profile Photo" 
                   className="w-full h-full object-cover"
                 />
               </div>
